@@ -99,6 +99,6 @@ namespace AccidTransito.app.Consola
        _repoPersona.AddPersonas(persona);
       
     }              
-     
+     //nnn
   }         
 }
