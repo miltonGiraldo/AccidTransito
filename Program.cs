@@ -17,9 +17,9 @@ namespace AccidTransito.app.Consola
    
        AddAccidentes();
        //AddVehiculos();
-       AddPersonas()  
-    {
-       private static void AddPersonas();
+        AddPersonas();  
+    
+       //private static void AddPersonas();
     {
        var Persona = new Persona
        {  
@@ -37,9 +37,9 @@ namespace AccidTransito.app.Consola
        };
         _repoPersona.AddPersonas(persona);
      }
+    }
+        private static void AddAccidentes();
     
-    private static void AddAccidentes();
-    {
         List<Persona> listaPersonas=new List<Persona>{
         new Persona{Nombre="Milton",Apellido = "Giraldo",TipoDocumento = "cc",NumeroIdentificacion = "94468661",
         Pais = "Colombia",Departamento = " Antioquia",CiudadResidencia = "Medellin",Direccion = "cra 99 n 34 - 78",
@@ -54,12 +54,12 @@ namespace AccidTransito.app.Consola
           
         List<Vehiculo> ListaVehiculos=new List<Vehiculo>{
           new Vehiculo{Clase = "Automovil",LicenciaTransito = "3765902341",Placa = "MSG654",Modelo = "2018",Servicio = "Particular",
-            Seguros = " si ",Tecnomecanica = "si",}
+            Seguros = " si ",Tecnomecanica = "si"},
           new Vehiculo{Clase = "Moto",LicenciaTransito = "000597856",Placa = "RXC67E",Modelo = "2019",Servicio = "Particular",
-            Seguros = " si ",Tecnomecanica = "si",}
+            Seguros = " si ",Tecnomecanica = "si"}
 
         };
-
+  
         var Nuevoaccidente = new Accidente
         {
          Persona=listaPersonas,       
@@ -76,7 +76,7 @@ namespace AccidTransito.app.Consola
         };    
         Accidente accidenteNuevo =_repoAccidente.AddAccidentes(Nuevoaccidente);        
         Console.WriteLine(accidenteNuevo.id);
-                    
+      }              
     }
   }         
 }
