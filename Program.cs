@@ -8,7 +8,7 @@ namespace AccidTransito.app.Consola
 {
     class Program
     {
-
+        private static IRepositorioAgenteTransito _repoAgente = new RepositorioAgenteTransito(new Persistencia.AppContext());
         private static IRepositorioAccidente _repoAccidente = new RepositorioAccidente(new Persistencia.AppContext());
         //private static IRepositorioVehiculo _repoVehiculo = new RepositorioVehiculo(new Persistencia.AppContext());
         private static IRepositorioPersona _repoPersona = new RepositorioPersona(new Persistencia.AppContext());
@@ -19,6 +19,7 @@ namespace AccidTransito.app.Consola
             AddAccidentes();
             //AddVehiculos();
             AddPersonas();
+            AddAgentes();
         }
 
         private static void AddPersonas()
@@ -38,6 +39,16 @@ namespace AccidTransito.app.Consola
                 Genero = Genero.Masculino,
             };
             _repoPersona.AddPersonas(Persona);
+            }
+            private static void AddAgentes()
+            {
+            var Agente = new Agente
+            {
+                Contraseña = "00123",
+                Codigo = "C002",
+                
+            };
+            _repoAgente.AddAgentes(Agente);
 
         }
         private static void AddAccidentes()
@@ -123,6 +134,7 @@ namespace AccidTransito.app.Consola
 
             Accidente accidenteNuevo = _repoAccidente.AddAccidentes(Nuevoaccidente);
             Console.WriteLine(accidenteNuevo.id);
+
         }
     }
 }
